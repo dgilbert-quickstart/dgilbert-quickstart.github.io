@@ -15,26 +15,28 @@
   </nav>
   <div class="container">
     <h1>Demo JS Intro - Contact Us</h1>
-    <div>
-      <div>
-          <span>* Name: </span>
-          <input type="text" id="txtname" placeholder="* name is required">
-      </div>
-      <div>
-          <span>Phpne: </span>
-          <input type="text" id="txtphone" placeholder="phone">
-      </div>
-      <div>
-        <span>* Email: </span>
-        <input type="text" id="txtemail" placeholder="* email is required">
-      </div>    
-      <div>
-        <span>* Comment: </span>
-        <textarea id="txtcomment" placeholder="* comment"></textarea>
-      </div>    
-      <div>
-        <button>Submit</button>
-      </div>
+    <div class="formstyle">
+      <form>
+          <div>
+              <span>* Name: </span>
+              <input type="text" id="txtname" placeholder="* name is required">
+          </div>
+          <div>
+              <span>Phone: </span>
+              <input type="text" id="txtphone" placeholder="phone">
+          </div>
+          <div>
+            <span>* Email: </span>
+            <input type="text" id="txtemail" placeholder="* email is required">
+          </div>    
+          <div>
+            <span>* Comment: </span>
+            <textarea id="txtcomment" placeholder="* comment"></textarea>
+          </div>    
+          <div>
+            <button onclick="return vlaidate_form()">Submit</button>
+          </div>
+      </form>
   </div>
 </body>
 </html>
