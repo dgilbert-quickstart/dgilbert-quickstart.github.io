@@ -76,6 +76,7 @@ function display_date_time1(){
   const eledate = document.getElementById('lbldate');
 
   //using document DOM, select the time element - lbltime
+  const eletime = document.getElementById('lbltime');
 
   //create a date variable 
   
@@ -83,6 +84,7 @@ function display_date_time1(){
   const d1 = new Date();  //combines date and time
 
   //create a time variable 
+  const t1 = new Date();  //combines date and time
 
   //update lbldate.innerText
   let _month = (d1.getMonth() + 1);  //math order of opertion (), *, +
@@ -90,5 +92,7 @@ function display_date_time1(){
   eledate.innerText = _month + "/" + d1.getDate() + "/" + d1.getFullYear();
 
   //update lbltime.innerText 
+  //eletime.innerText = t1.getHours() + ":" + t1.getMinute();
+  eletime.innerText = t1.toLocaleTimeString();
 
 }
