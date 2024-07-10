@@ -159,4 +159,47 @@ function vlaidate_form3()
     return true;
 }
 
+function vlaidate_form4()
+{
+
+    var elename = document.getElementById("txtname");
+    let elephone = document.getElementById("txtphone");
+    const eleemail = document.getElementById("txtemail");    
+    const elecomment = document.getElementById("txtcomment");
+
+    const ele_error_message = document.querySelector(".errorMessage");
+    //const ele_error_message = document.querySelector("#errorMessage");
+    //const ele_error_message = document.getElementById("errorMessage");
+    
+    const ele_name_error = document.querySelector(".nameError");
+
+    let _msg = "";
+
+    //phone is optional - no evaluate phone field 
+
+    //* can also add/remove class - if 2 more classes
+    ele_name_error.style.display = "none";
+
+    //x === 5, validates that x and 5 are the same time ie: number then validates that x is equal to 5
+    if (elename.value === "") 
+    {
+        _msg = "* please enter a valid name";
+        ele_error_message.innerHTML = "<b>" + _msg  + "</b>";
+
+        //* can also add/remove class - if 2 more classes
+        ele_name_error.style.display = "block";
+        return false;    
+    }
+    //x==5, only validates that x is equal to 5
+    else if (eleemail.value == "") 
+    {
+        _msg = "* please enter a valid email";
+        ele_error_message.innerText = "<b>" +  _msg  + "</b>";
+
+        return false;    
+    }
+
+    //continue form submit 
+    return true;
+}
 
