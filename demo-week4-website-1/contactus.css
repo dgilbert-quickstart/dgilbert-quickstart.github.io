@@ -19,3 +19,7 @@ refactor:
     cursor: pointer;
   }
   
+  .nameError
+  {
+    display: none;
+  }
