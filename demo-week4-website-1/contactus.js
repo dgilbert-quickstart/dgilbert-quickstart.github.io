@@ -268,10 +268,27 @@ function vlaidate_form5()
         
         _text += "</ul>";
         
-        ele_form_error_list.innerHTML = _text;
+        //ele_form_error_list.innerHTML = _text;
 
         //- dom element code 
+        let ele_ul = document.createElement("ul");
 
+        for(let i=0; (i<_form_error_array.length);i++)
+        {            
+            let ele_li = document.createElement("li");
+
+            let ele_p = document.createElement("p");
+            ele_p.innerText = _form_error_array[i];
+
+            ele_li.appendChild(ele_p);
+            ele_ul.appendChild(ele_li);
+        }
+                    
+        //retrieve to html or text output from the ul
+        //ele_form_error_list.innerHTML = ele_ul.innerHTML;
+        ele_form_error_list.innerHTML = "";
+        ele_form_error_list.appendChild(ele_ul);
+        
         //stop submit button 
         return false;
     }
