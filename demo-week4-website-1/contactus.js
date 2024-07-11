@@ -22,6 +22,27 @@ validation reuirement
 //es1..4
 //refactor es5+
 
+
+//-------------------------------
+//-- GLOBAL SCOPE 
+//-------------------------------
+
+//<script src="./contactus.js" defer></script>
+//-- defer - display html page then download javascript file in background when updating DOM 
+
+//-- Create event using DOM 
+//-- callback event / ananymous function 
+//-- ananymous function = function without a name 
+//-- function event argument
+//-- closure / functional programming - assign a function as a parameter
+document.getElementById("btnReset").addEventListener("click", function(event)
+{
+        event.preventDefault();
+
+        console.log("** reset button cliek");
+
+});
+
 function vlaidate_form1()
 {
 
@@ -298,3 +319,4 @@ function vlaidate_form5()
     //continue form submit 
     return true;
 }
+
