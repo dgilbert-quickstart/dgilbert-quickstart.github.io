@@ -277,7 +277,7 @@ function vlaidate_form5()
         {            
             let ele_li = document.createElement("li");
 
-            //ele_text = document.createTextNode(_form_error_array[i]);
+            //let ele_text = document.createTextNode(_form_error_array[i]);
             let ele_p = document.createElement("p");
             ele_p.innerText = _form_error_array[i];
 
