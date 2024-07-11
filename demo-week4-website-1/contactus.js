@@ -203,3 +203,79 @@ function vlaidate_form4()
     return true;
 }
 
+function vlaidate_form5()
+{
+
+    var elename = document.getElementById("txtname");
+    let elephone = document.getElementById("txtphone");
+    const eleemail = document.getElementById("txtemail");    
+    const elecomment = document.getElementById("txtcomment");
+
+    const ele_error_message = document.querySelector(".errorMessage");
+    //const ele_error_message = document.querySelector("#errorMessage");
+    //const ele_error_message = document.getElementById("errorMessage");
+    
+    const ele_name_error = document.querySelector(".nameError");
+
+    const ele_form_error_list = document.querySelector(".form-Field-Error-List");
+    //const ele_form_error_list = document.querySelector("#form-Field-Error-List");
+    //const ele_form_error_list = document.getElementById("form-Field-Error-List");
+
+    let _form_error_array = [];
+    //let _form_error_array = new Array();
+
+    let _msg = "";
+
+    //phone is optional - no evaluate phone field 
+
+    //* can also add/remove class - if 2 more classes
+    ele_name_error.style.display = "none";
+
+    //x === 5, validates that x and 5 are the same time ie: number then validates that x is equal to 5
+    if (elename.value === "") 
+    {
+        _msg = "* please enter a valid name";
+        _form_error_array.push(_msg);
+
+        ele_error_message.innerHTML = "<b>" + _msg  + "</b>";
+
+        //* can also add/remove class - if 2 more classes
+        ele_name_error.style.display = "block";
+        //return false;    
+    }
+    
+    //x==5, only validates that x is equal to 5    
+    if (eleemail.value == "") 
+    {
+        _msg = "* please enter a valid email";
+        _form_error_array.push(_msg);
+        ele_error_message.innerText = "<b>" +  _msg  + "</b>";
+
+        //return false;    
+    }
+
+    if(_form_error_array.length>0){
+
+        //loop through array and display array items in the div 
+        
+        //- html code string 
+        let _text = "<ul>";
+
+        for(let i=0; (i<_form_error_array.length);i++)
+        {            
+            _text += "<li>" + _form_error_array[i] + "</li>";            
+        }
+        
+        _text += "</ul>";
+        
+        ele_form_error_list.innerHTML = _text;
+
+        //- dom element code 
+
+        //stop submit button 
+        return false;
+    }
+
+    //continue form submit 
+    return true;
+}
