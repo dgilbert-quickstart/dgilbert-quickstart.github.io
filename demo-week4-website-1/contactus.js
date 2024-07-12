@@ -439,7 +439,8 @@ function vlaidate_form6()
                     
         //retrieve to html or text output from the ul
         //ele_form_error_list.innerHTML = ele_ul.innerHTML;
-        ele_form_error_list.innerHTML = "";
+        
+        //ele_form_error_list.innerHTML = "";
         //ele_form_error_list.appendChild(ele_ul);
         
         //stop submit button 
