@@ -455,6 +455,7 @@ function vlaidate_form6()
 //
 //optionaL move code to a seperate file and import using js script 
 //
+/*
 function generate_field_error_list_string(form_error_array)
 {
     let _text = "<ul>";
@@ -468,3 +469,4 @@ function generate_field_error_list_string(form_error_array)
     
     return _text;
 }
+*/
