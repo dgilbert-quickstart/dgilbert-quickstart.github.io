@@ -401,6 +401,7 @@ function vlaidate_form6()
         // - unit test function seperat from application
         //
         //- html code string 
+        /*
         let _text = "<ul>";
 
         for(let i=0; (i<_form_error_array.length);i++)
@@ -409,8 +410,10 @@ function vlaidate_form6()
         }
         
         _text += "</ul>";
+        */
         
-        //ele_form_error_list.innerHTML = _text;
+        let _text = generate_field_error_list_string(_form_error_array);
+        ele_form_error_list.innerHTML = _text;
 
         //- dom element code 
         //        
@@ -437,7 +440,7 @@ function vlaidate_form6()
         //retrieve to html or text output from the ul
         //ele_form_error_list.innerHTML = ele_ul.innerHTML;
         ele_form_error_list.innerHTML = "";
-        ele_form_error_list.appendChild(ele_ul);
+        //ele_form_error_list.appendChild(ele_ul);
         
         //stop submit button 
         return false;
@@ -445,4 +448,22 @@ function vlaidate_form6()
 
     //continue form submit 
     return true;
+}
+
+
+//
+//optionaL move code to a seperate file and import using js script 
+//
+function generate_field_error_list_string(form_error_array)
+{
+    let _text = "<ul>";
+
+    for(let i=0; (i<form_error_array.length);i++)
+    {            
+        _text += "<li>" + form_error_array[i] + "</li>";            
+    }
+    
+    _text += "</ul>";
+    
+    return _text;
 }
