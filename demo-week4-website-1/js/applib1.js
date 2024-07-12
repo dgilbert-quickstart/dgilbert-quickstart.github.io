@@ -3,6 +3,11 @@ GLOBAL SCOPE
 
 applib1.js
 
+- class, function, namesapce 
+- es1..4
+- es5+
+- pollyfills 
+
 */
 function generate_field_error_list_string(form_error_array)
 {
