@@ -3,7 +3,7 @@ GLOBAL SCOPE
 
 applib1.js
 
-- class, function, namesapce 
+- class, function, namespace 
 - es1..4
 - es5+
 - pollyfills 
