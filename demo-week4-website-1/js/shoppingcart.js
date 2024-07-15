@@ -50,9 +50,13 @@ document.getElementById("btnclose-addnew").addEventListener("click", function(e)
 {
     e.preventDefault();
     const output1 = document.getElementById("output1");
+    const additemform = document.querySelector(".addnewitem");
+
     _msg = "btnclose-addnew"
     console.log(_msg)
     output1.innerText = _msg;
+
+    additemform.style.display = "none";
 });
 
 document.getElementById("btnaddnew").addEventListener("click", function(e)
@@ -77,7 +81,12 @@ document.getElementById("btnaddnewitem").addEventListener("click", function(e)
 {
     e.preventDefault();
     const output1 = document.getElementById("output1");
+    const additemform = document.querySelector(".addnewitem");
+
     _msg = "bntaddnewitem"
     console.log(_msg)
     output1.innerText = _msg;
+
+    additemform.style.display = "block";
+
 });
