@@ -3,7 +3,7 @@
 
 - javascript global space 
 
-- funcitons progamming 
+- funcitonal progamming - ie: R, MatLab, Python, Other 
 
 - functions
     - function parameters , passing functions into a function as parameter 
@@ -45,3 +45,39 @@ function clearButton(e)
     console.log(_msg)
     output1.innerText = _msg;
 }
+
+document.getElementById("btnclose-addnew").addEventListener("click", function(e)
+{
+    e.preventDefault();
+    const output1 = document.getElementById("output1");
+    _msg = "btnclose-addnew"
+    console.log(_msg)
+    output1.innerText = _msg;
+});
+
+document.getElementById("btnaddnew").addEventListener("click", function(e)
+{
+    e.preventDefault();
+    const output1 = document.getElementById("output1");
+    _msg = "btnaddnew"
+    console.log(_msg)
+    output1.innerText = _msg;
+});
+
+document.getElementById("btnclear-addnew").addEventListener("click", function(e)
+{
+    e.preventDefault();
+    const output1 = document.getElementById("output1");
+    _msg = "btnclear-addnew"
+    console.log(_msg)
+    output1.innerText = _msg;
+});
+
+document.getElementById("btnaddnewitem").addEventListener("click", function(e)
+{
+    e.preventDefault();
+    const output1 = document.getElementById("output1");
+    _msg = "bntaddnewitem"
+    console.log(_msg)
+    output1.innerText = _msg;
+});

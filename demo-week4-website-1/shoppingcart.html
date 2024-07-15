@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>demo shopping cart 1.0.1</title>
+  <title>demo shopping cart 1.0.2</title>
   <link rel="stylesheet" href="./css/shoppingcart.css">
   <script src="./js/shoppingcart.js" defer></script>
 </head>
@@ -18,13 +18,21 @@
     <a href="./shoppingcart.html">Shopping Cart</a>
   </nav>
   <div class="container">
-    <h1>Demo Shopping Cart 1.0.1</h1>
+    <h1>Demo Shopping Cart 1.0.2</h1>
     <p class="subheading">
       <input type="text" class="txtsearch" id="txtsearch">
       <button class="btnsearch" id="btnsearch">search</button>
       <a href="#" class="btnclear" id="btnclear">clear</a>
     </p>
-    <a href="#">new item</a>
+    <div class="addnewitem" id="addnewitem">
+      <span><a href="#" class="btnclose-addnew" id="btnclose-addnew">(x)</a></span>
+      <span>Add New Item</span><br/>
+      <span>name:</span><input type="text"><br/>
+      <span>price:</span><input type="text"><br/>
+      <button class="btnaddnew" id="btnaddnew">Add</button>
+      <a href="#" class="btnclear-addnew" id="btnclear-addnew">clear</a>
+    </div>
+    <a href="#" class="bntaddnewitem" id="btnaddnewitem">new item</a>
     <div class="output1" id="output1"></div>
     <div class="action">
       <span>total:</span>
