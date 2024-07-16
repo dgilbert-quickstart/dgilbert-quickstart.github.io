@@ -107,17 +107,19 @@ document.getElementById("btnaddnew").addEventListener("click", function(e)
 
     let _total = 0.0;
     let _str_items = "";
+    let _item_price = 0.0;
 
     //update ui/li with cart item 
     for(let i=0;i<g_shoppingcart.length;i++)
     {
+        _item_price = parseFloat(g_shoppingcart[i].price);
         //use Dom.CreateElement, appendChild 
         //output1.innerHTML = output1.innerHTML + JSON.stringify(g_shoppingcart[i]) + "<br/>";
         _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
         "<span> " + g_shoppingcart[i].name + " </span>" + 
         "<span> | " + g_shoppingcart[i].price + " </span></div>";
 
-        _total = _total + _price;
+        _total = _total + _item_price;
     }
 
     output1.innerHTML = _str_items;
@@ -172,10 +174,37 @@ function btndeleteitem(index)
     {
         //delete item from arry  
         //refactor: es5+ delete array item 
+        //splice add, update, delete 
+        g_shoppingcart.splice(index,1);
 
         //refresh list - re-display list item in screen 
+        //@@@ duplicate code - refactor to function @@@
+
+        let _item_price = 0.0
+        let _total = 0.0;
+        let _str_items = "";
+    
+        output1.innerHTML = "";
+
+        //update ui/li with cart item 
+        for(let i=0;i<g_shoppingcart.length;i++)
+        {
+            _item_price = parseFloat(g_shoppingcart[i].price);
+            //use Dom.CreateElement, appendChild 
+            //output1.innerHTML = output1.innerHTML + JSON.stringify(g_shoppingcart[i]) + "<br/>";
+            _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
+            "<span> " + g_shoppingcart[i].name + " </span>" + 
+            "<span> | " + g_shoppingcart[i].price + " </span></div>";
+    
+            _total = _total + _item_price;
+        }
+    
+        output1.innerHTML = _str_items;    
+        lbltotal.innerText = _total.toString();
 
         alert("item " + index + " | "  + _item_name);
+
+        //@@@ duplicate code - refactor to function @@@
     }
 }
 
