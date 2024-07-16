@@ -54,7 +54,7 @@ document.getElementById("btnclose-addnew").addEventListener("click", function(e)
 
     _msg = "btnclose-addnew"
     console.log(_msg)
-    output1.innerText = _msg;
+    //output1.innerText = _msg;
 
     additemform.style.display = "none";
 });
@@ -97,7 +97,7 @@ document.getElementById("btnaddnew").addEventListener("click", function(e)
 
     //create a new shoppingcart entry/object ie: {name, price}
     //javascript object = json document, NOSQL ie: mongodb and other systems 
-    var _cartitem = {name:txtaddname, price:_price};
+    var _cartitem = {name:txtaddname.value, price:_price};
 
     //add shoppingcart entry/object to ul/list
     _shoppingcart.push(_cartitem);
@@ -107,7 +107,7 @@ document.getElementById("btnaddnew").addEventListener("click", function(e)
     for(let i=0;i<_shoppingcart.length;i++)
     {
         //use Dom.CreateElement, appendChild 
-        output1.innerHTML = output1.innerHTML + _shoppingcart[i] + "<br/>";
+        output1.innerHTML = output1.innerHTML + JSON.stringify(_shoppingcart[i]) + "<br/>";
         _total = _total + _price;
     }
 
@@ -135,7 +135,7 @@ document.getElementById("btnaddnewitem").addEventListener("click", function(e)
 
     _msg = "bntaddnewitem"
     console.log(_msg)
-    output1.innerText = _msg;
+    //output1.innerText = _msg;
 
     additemform.style.display = "block";
 
