@@ -106,13 +106,21 @@ document.getElementById("btnaddnew").addEventListener("click", function(e)
     output1.innerHTML = "";
 
     let _total = 0.0;
+    let _str_items = "";
+
     //update ui/li with cart item 
     for(let i=0;i<g_shoppingcart.length;i++)
     {
         //use Dom.CreateElement, appendChild 
-        output1.innerHTML = output1.innerHTML + JSON.stringify(g_shoppingcart[i]) + "<br/>";
+        //output1.innerHTML = output1.innerHTML + JSON.stringify(g_shoppingcart[i]) + "<br/>";
+        _str_items += "<div><a href='#' onclick='retrun btndeleteitem(" + i + ")'>[x]</a> " + 
+        "<span> " + g_shoppingcart[i].name + " </span>" + 
+        "<span> | " + g_shoppingcart[i].price + " </span></div>";
+
         _total = _total + _price;
     }
+
+    output1.innerHTML = _str_items;
 
     //lbltotal.innerText = _total.toFixed(2).toString();
     lbltotal.innerText = _total.toString();
@@ -154,3 +162,20 @@ document.getElementById("btnaddnewitem").addEventListener("click", function(e)
     additemform.style.display = "block";
 
 });
+
+function btndeleteitem(index)
+{
+   
+    const _item_name = g_shoppingcart[index].name;
+
+    if(confirm("delete item  " + index + "| " + _item_name + "?"))
+    {
+        //delete item from arry  
+        //refactor: es5+ delete array item 
+
+        //refresh list - re-display list item in screen 
+
+        alert("item " + index + " | "  + _item_name);
+    }
+}
+
