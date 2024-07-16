@@ -113,7 +113,7 @@ document.getElementById("btnaddnew").addEventListener("click", function(e)
     {
         //use Dom.CreateElement, appendChild 
         //output1.innerHTML = output1.innerHTML + JSON.stringify(g_shoppingcart[i]) + "<br/>";
-        _str_items += "<div><a href='#' onclick='retrun btndeleteitem(" + i + ")'>[x]</a> " + 
+        _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
         "<span> " + g_shoppingcart[i].name + " </span>" + 
         "<span> | " + g_shoppingcart[i].price + " </span></div>";
 
