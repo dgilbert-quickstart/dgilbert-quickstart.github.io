@@ -17,6 +17,13 @@
 
 */
 
+//-- javascript local scope, global scope 
+//-- Application Refactor
+//-- application global data store /state/ ie: cookies, localstorage, sessionstorage, indexdb, react/redux 
+//-- BrowserDev Tools to provew application date/state 
+// create shopping cart array 
+let g_shoppingcart = [];
+
 //bind to click event using dom.addEventListener
 /*
     - function parameters , passing functions into a function as parameter 
@@ -66,14 +73,7 @@ document.getElementById("btnaddnew").addEventListener("click", function(e)
     const addnewmessage = document.getElementById("addnewitem-message");
     const txtaddname = document.getElementById("txtname-new");
     const txtaddprice = document.getElementById("txtprice-new");
-    
-    //-- javascript local scope, global scope 
-    //-- Application Refactor
-    //-- application global data store /state/ ie: cookies, localstorage, sessionstorage, indexdb, react/redux 
-    //-- BrowserDev Tools to provew application date/state 
-    // create shopping cart array 
-    let _shoppingcart = [];
-
+    const lbltotal = document.querySelector("#lbltotal");
     //validate only add max 10 items 
 
     if(txtaddname.value === "")
@@ -100,16 +100,30 @@ document.getElementById("btnaddnew").addEventListener("click", function(e)
     var _cartitem = {name:txtaddname.value, price:_price};
 
     //add shoppingcart entry/object to ul/list
-    _shoppingcart.push(_cartitem);
+    //refactor:  es5+ ..rest operator to append items to array 
+    g_shoppingcart.push(_cartitem);
+
+    output1.innerHTML = "";
 
     let _total = 0.0;
     //update ui/li with cart item 
-    for(let i=0;i<_shoppingcart.length;i++)
+    for(let i=0;i<g_shoppingcart.length;i++)
     {
         //use Dom.CreateElement, appendChild 
-        output1.innerHTML = output1.innerHTML + JSON.stringify(_shoppingcart[i]) + "<br/>";
+        output1.innerHTML = output1.innerHTML + JSON.stringify(g_shoppingcart[i]) + "<br/>";
         _total = _total + _price;
     }
+
+    //lbltotal.innerText = _total.toFixed(2).toString();
+    lbltotal.innerText = _total.toString();
+    
+    txtaddname.value = "";
+    txtaddprice.value = "";
+
+    //
+    //refactor forloop to es5+ functional programming/cosure: map, reduce, filter, other 
+    //- nest loops, nested funtions, recursive programming, nested json object
+    //
 
     //update total field 
 
@@ -124,7 +138,7 @@ document.getElementById("btnclear-addnew").addEventListener("click", function(e)
     const output1 = document.getElementById("output1");
     _msg = "btnclear-addnew"
     console.log(_msg)
-    output1.innerText = _msg;
+    //output1.innerText = _msg;
 });
 
 document.getElementById("btnaddnewitem").addEventListener("click", function(e)
