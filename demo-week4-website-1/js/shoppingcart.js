@@ -99,6 +99,10 @@ document.getElementById("btnaddnew").addEventListener("click", function(e)
     //javascript object = json document, NOSQL ie: mongodb and other systems 
     var _cartitem = {name:txtaddname.value, price:_price};
 
+    //---destructoring -- 
+    //creating variables from javascript object 
+    //var [name, price] = {name:txtaddname.value, price:_price};
+
     //add shoppingcart entry/object to ul/list
     //refactor:  es5+ ..rest operator to append items to array 
     g_shoppingcart.push(_cartitem);
@@ -110,6 +114,10 @@ document.getElementById("btnaddnew").addEventListener("click", function(e)
     let _item_price = 0.0;
 
     //update ui/li with cart item 
+    //--- @@@ duplicate ui update code @@@ ---
+    //-- refactr: functional programming/closure 
+    //loop through array: arry.map, filer, foreach,find,  other 
+
     for(let i=0;i<g_shoppingcart.length;i++)
     {
         _item_price = parseFloat(g_shoppingcart[i].price);
@@ -121,6 +129,8 @@ document.getElementById("btnaddnew").addEventListener("click", function(e)
 
         _total = _total + _item_price;
     }
+
+    //@@-- duplicate code -- 
 
     output1.innerHTML = _str_items;
 
@@ -167,7 +177,11 @@ document.getElementById("btnaddnewitem").addEventListener("click", function(e)
 
 function btndeleteitem(index)
 {
-   
+   //
+   //functional programming, closure, used for nexted loops , recursion
+   //refactor: es5+, map, filter, find, indexof, foreach using unique id 
+   //combine or nest - map(filter) ie: nested for loops, do loops, custom functions etc..
+   //
     const _item_name = g_shoppingcart[index].name;
 
     if(confirm("delete item  " + index + "| " + _item_name + "?"))
