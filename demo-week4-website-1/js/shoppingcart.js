@@ -38,8 +38,77 @@ document.getElementById("btnsearch").addEventListener("click", function(e)
     //continue button click 
     e.preventDefault();
     const output1 = document.getElementById("output1");
+    const txtsearch = document.querySelector("#txtsearch");
+    const searchmessage = document.querySelector(".searchmessage");
+
     console.log("* btnsearch")
-    output1.innerText = "* btnsearch ";
+    //output1.innerText = "* btnsearch ";
+
+    if(txtsearch.value === ""){
+        searchmessage.innerText = "* please enter search keyword(s)"
+        return false;
+    }
+    else {
+        //es5+ string template literal 
+        searchmessage.innerText = `* searching for: ${txtsearch.value}`;
+    }
+
+    const _searchitems = [];
+
+    //search for item in array 
+    //for, forEach, filter,opt: map 
+    for(let i=0;i<g_shoppingcart.length;i++)
+    {
+        //vallidate if item exist in array 
+        //example-1: name="item one".indexOf("one")
+        //index = 5
+        //example-1: name="item one".indexOf("two")
+        //index = -1
+        const _item_found_at_index = g_shoppingcart[i].name.toLowerCase().indexOf(txtsearch.value.toLowerCase());
+
+        if(_item_found_at_index > -1){
+            _searchitems.push(g_shoppingcart[i]);            
+            //es5+
+            //spread operator - get all items from existing array , append new items to the end of the array 
+            //_searchitems = [..._searchitems,g_shoppingcart[i]];
+        }
+    }
+    
+    if(_searchitems.length == 0)
+    {
+        //es5+ 
+        searchmessage.innerText = `* no items found`;
+        return false;
+    }
+
+    //refresh ui with search items found
+    //@@ -- duplicate code -- 
+    
+    let _item_price = 0.0
+    let _total = 0.0;
+    let _str_items = "";
+
+    output1.innerHTML = "";
+
+    //update ui/li with cart item 
+    for(let i=0;i<_searchitems.length;i++)
+    {
+        _item_price = parseFloat(_searchitems[i].price);
+        //use Dom.CreateElement, appendChild 
+        //output1.innerHTML = output1.innerHTML + JSON.stringify(g_shoppingcart[i]) + "<br/>";
+        _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
+        "<span> " + _searchitems[i].name + " </span>" + 
+        "<span> | " + _searchitems[i].price + " </span></div>";
+
+        _total = _total + _item_price;
+    }
+
+    output1.innerHTML = _str_items;    
+    lbltotal.innerText = _total.toString();
+
+    //-- update total 
+    //@@ -- duplicate code 
+
 });
 
 document.getElementById("btnclear").addEventListener("click", clearButton);
@@ -50,7 +119,7 @@ function clearButton(e)
     const output1 = document.getElementById("output1");
     let = _msg = "btnclear";   
     console.log(_msg)
-    output1.innerText = _msg;
+    //output1.innerText = _msg;
 }
 
 document.getElementById("btnclose-addnew").addEventListener("click", function(e)
