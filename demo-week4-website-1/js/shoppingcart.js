@@ -57,7 +57,7 @@ document.getElementById("btnsearch").addEventListener("click", function(e)
 
     //search for item in array 
     //for, forEach, filter,opt: map 
-    for(let i=0;i<g_shoppingcart.length;i++)
+    /*for(let i=0;i<g_shoppingcart.length;i++)
     {
         //vallidate if item exist in array 
         //example-1: name="item one".indexOf("one")
@@ -73,7 +73,30 @@ document.getElementById("btnsearch").addEventListener("click", function(e)
             //_searchitems = [..._searchitems,g_shoppingcart[i]];
         }
     }
+    */
     
+    //es5+
+    //--
+    //-- hi order functions - functional programming - closure 
+    //-- similar to for loop 
+    //--
+    
+    //es5+
+    //function findArrayItems(item, index, arr)    
+    //g_shoppingcart.forEach(function(item,index,arr) {
+    //array.foreach - similar to array.map() -- always retruns same number of items 
+    g_shoppingcart.forEach(function(item) {
+
+        const _item_found_at_index = item.name.toLowerCase().indexOf(txtsearch.value.toLowerCase());
+
+        if(_item_found_at_index > -1){
+            _searchitems.push(item);            
+            //es5+
+            //spread operator - get all items from existing array , append new items to the end of the array 
+            //_searchitems = [..._searchitems,g_shoppingcart[i]];
+        }
+    });
+
     if(_searchitems.length == 0)
     {
         //es5+ 
