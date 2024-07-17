@@ -53,7 +53,7 @@ document.getElementById("btnsearch").addEventListener("click", function(e)
         searchmessage.innerText = `* searching for: ${txtsearch.value}`;
     }
 
-    const _searchitems = [];
+    //const _searchitems = [];
 
     //search for item in array 
     //for, forEach, filter,opt: map 
@@ -85,6 +85,7 @@ document.getElementById("btnsearch").addEventListener("click", function(e)
     //function findArrayItems(item, index, arr)    
     //g_shoppingcart.forEach(function(item,index,arr) {
     //array.foreach - similar to array.map() -- always retruns same number of items 
+    /*
     g_shoppingcart.forEach(function(item) {
 
         const _item_found_at_index = item.name.toLowerCase().indexOf(txtsearch.value.toLowerCase());
@@ -95,6 +96,31 @@ document.getElementById("btnsearch").addEventListener("click", function(e)
             //spread operator - get all items from existing array , append new items to the end of the array 
             //_searchitems = [..._searchitems,g_shoppingcart[i]];
         }
+    });
+    */
+
+    let _searchitems = null; //[]
+
+    //es5+ 
+    //high order funciton filter  ie: forEach, map
+    //_searchitems = g_shoppingcart.filter(function(item, index, arr){
+    _searchitems = g_shoppingcart.filter(function(item) {
+    
+        const _item_found_at_index = item.name.toLowerCase().indexOf(txtsearch.value.toLowerCase());
+
+        /*
+        if(_item_found_at_index > -1){
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        */
+    
+        //1 line or in-line of statement 
+        return (_item_found_at_index > -1) ? true : false;
+
     });
 
     if(_searchitems.length == 0)
