@@ -145,7 +145,8 @@ document.getElementById("btnsearch").addEventListener("click", function(e)
         _item_price = parseFloat(_searchitems[i].price);
         //use Dom.CreateElement, appendChild 
         //output1.innerHTML = output1.innerHTML + JSON.stringify(g_shoppingcart[i]) + "<br/>";
-        _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
+        //_str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
+        _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + "," + _searchitems[i].id + ")'>[x]</a> " + 
         "<span> " + _searchitems[i].name + " </span>" + 
         "<span> | " + _searchitems[i].price + " </span></div>";
 
@@ -194,7 +195,8 @@ function clearButton(e)
         _item_price = parseFloat(g_shoppingcart[i].price);
         //use Dom.CreateElement, appendChild 
         //output1.innerHTML = output1.innerHTML + JSON.stringify(g_shoppingcart[i]) + "<br/>";
-        _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
+        //_str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
+        _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + "," + g_shoppingcart[i].id + ")'>[x]</a> " + 
         "<span> " + g_shoppingcart[i].name + " </span>" + 
         "<span> | " + g_shoppingcart[i].price + " </span></div>";
 
@@ -282,7 +284,8 @@ document.getElementById("btnaddnew").addEventListener("click", function(e)
         _item_price = parseFloat(g_shoppingcart[i].price);
         //use Dom.CreateElement, appendChild 
         //output1.innerHTML = output1.innerHTML + JSON.stringify(g_shoppingcart[i]) + "<br/>";
-        _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
+        //_str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
+        _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + "," + g_shoppingcart[i].id + ")'>[x]</a> " +         
         "<span> " + g_shoppingcart[i].name + " </span>" + 
         "<span> | " + g_shoppingcart[i].price + " </span></div>";
 
@@ -334,16 +337,19 @@ document.getElementById("btnaddnewitem").addEventListener("click", function(e)
 
 });
 
-function btndeleteitem(index)
+function btndeleteitem(index, id)
 {
    //
    //functional programming, closure, used for nexted loops , recursion
    //refactor: es5+, map, filter, find, indexof, foreach using unique id 
    //combine or nest - map(filter) ie: nested for loops, do loops, custom functions etc..
+   
    //
-    const _item_name = g_shoppingcart[index].name;
+   //@@ lookup name using (array.Find) by unique id 
+   const _item_name = g_shoppingcart[index].name;
 
-    if(confirm("delete item  " + index + "| " + _item_name + "?"))
+    //if(confirm("delete item  " + index + "| " + _item_name + "?"))
+    if(confirm(`delete item ${index} | ${id} | ${_item_name} ?`))
     {
         //delete item from arry  
         //refactor: es5+ delete array item 
@@ -365,7 +371,9 @@ function btndeleteitem(index)
             _item_price = parseFloat(g_shoppingcart[i].price);
             //use Dom.CreateElement, appendChild 
             //output1.innerHTML = output1.innerHTML + JSON.stringify(g_shoppingcart[i]) + "<br/>";
-            _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
+
+            //_str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + ")'>[x]</a> " + 
+            _str_items += "<div><a href='#' onclick='return btndeleteitem(" + i + "," + g_shoppingcart[i].id + ")'>[x]</a> " + 
             "<span> " + g_shoppingcart[i].name + " </span>" + 
             "<span> | " + g_shoppingcart[i].price + " </span></div>";
     
