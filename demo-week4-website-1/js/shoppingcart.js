@@ -344,17 +344,32 @@ function btndeleteitem(index, id)
    //refactor: es5+, map, filter, find, indexof, foreach using unique id 
    //combine or nest - map(filter) ie: nested for loops, do loops, custom functions etc..
    
-   //
    //@@ lookup name using (array.Find) by unique id 
+   let _indexfound = 0;
+
+   const _itemfound = g_shoppingcart.find(function(item, index){
+
+    const _item_found_at_index = item.id.toString().indexOf(id.toString());
+    
+    _indexfound = index;
+
+    return (_item_found_at_index > -1) ? true : false;
+
+   });
+
    const _item_name = g_shoppingcart[index].name;
 
     //if(confirm("delete item  " + index + "| " + _item_name + "?"))
-    if(confirm(`delete item ${index} | ${id} | ${_item_name} ?`))
+    if(confirm(`delete item ${index} | ${id} | ${_item_name} -> ${_indexfound} = ${_itemfound.name} ?`))
     {
         //delete item from arry  
         //refactor: es5+ delete array item 
         //splice add, update, delete 
-        g_shoppingcart.splice(index,1);
+        //g_shoppingcart.splice(index,1);
+        g_shoppingcart.splice(_indexfound,1);
+
+        //@@ edit item - replace existi item index 
+        //g_shoppingcart.splice(_indexfound,0,_itemfound_edited_json_row);
 
         //refresh list - re-display list item in screen 
         //@@@ duplicate code - refactor to function @@@
@@ -385,7 +400,8 @@ function btndeleteitem(index, id)
 
         //@@@ duplicate code - refactor to function @@@
 
-        alert("item " + index + " | "  + _item_name);
+        //alert("item " + index + " | "  + _item_name);
+        alert("item " + id + " | "  + _itemfound.name);
 
     }
 }
