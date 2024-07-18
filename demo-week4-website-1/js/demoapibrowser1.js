@@ -92,13 +92,29 @@ document.getElementById("btnjqueryex1").addEventListener("click",function(e) {
     const _function_name = "btnjqueryex1";
 
     //error handling - if an error occurs goto cath statement and print error 
-    
     try 
     {
+    
+        //https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_ajax_get
         
         e.preventDefault();
 
-        output1.innerText = _function_name;
+        const _url = "./data/demo1.json";
+        //const _url = "./data/demo2.json";
+        //const _url = "https://jsonplaceholder.org/posts/1";
+
+        $.get(_url, function(data, status){
+            
+            _data = "Data: " + JSON.stringify(data) + "\nStatus: " + status;
+
+            //
+            //convert data to json object - JSON.parse(data)
+            //
+            //for, forEach, map, find, filter, other
+            //
+
+            output1.innerText = _data;
+          });
 
     } catch (error) {
         output1.innerText = `${_function_name}::error ${error}`
