@@ -40,6 +40,12 @@ document.getElementById("btn-ds1").addEventListener("click", function(e){
         //data structure example 1
         //class or code structure used to access/create-update/delete in-memory or database data
         //array, list, set, map, other 
+        
+        //hi-order functional progamming/closure - const/readonly array input and generate output
+        //forEach, filter, find, indexOf, Other
+        //map, reducr
+
+        //-- Map, Set class - in-memory dataset 
 
         _output1.innerText = _function_name;
 
