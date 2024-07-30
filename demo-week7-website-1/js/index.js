@@ -45,7 +45,7 @@ document.getElementById("btn-ds1").addEventListener("click", function(e){
         //forEach, filter, find, indexOf, Other
         //map, reducr
 
-        //-- Map, Set class - in-memory dataset 
+        //-- es6+ Map, Set class - in-memory dataset 
         //- data can be from file or rest api 
 
         //data = dataset - json dataset
