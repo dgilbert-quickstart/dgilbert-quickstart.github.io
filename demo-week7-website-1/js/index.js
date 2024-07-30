@@ -260,9 +260,34 @@ document.getElementById("btn-ds5").addEventListener("click", async (e) => {
         //----------------------------------------------------------------------------------
         //es6+ map class example
         //----------------------------------------------------------------------------------
-        //--- additional functanility ie: sort, other 
+        //--- additional functanility ie: set, sort, other 
 
-        _output1.innerText = _function_name;
+        //-- new Map(), Set() = create a new instance/copy of object/map in memory 
+        //-- new Map(), Set() different copies of map/object in memory with samep/different data
+        //-- new Date() -- has own set of methods 
+
+        const _map1 = new Map(
+            [
+             ["key1",5],
+             ["key2",10],
+             ["key3",15],
+            ]);
+
+        _map1.set("key4",25) //add new key and value 
+        _map1.set("key3",12) //update value using key 
+
+        //retrieve items 
+        const _key2_value = _map1.get("key2");
+
+        //_map1.forEach
+        //es6+ 
+        //for(let item of _map1.keys())
+        for(let item of _map1.values())
+        {
+            _output1.innerText += `${item}|`;
+        }
+        
+        _output1.innerText += ` - _key2_value: ${_key2_value}|`;
 
     } catch (error) {
         
