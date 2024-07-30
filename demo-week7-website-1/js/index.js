@@ -178,7 +178,12 @@ document.getElementById("btn-ds3").addEventListener("click", async (e) => {
             {id:3, name:"name three", email:"name3@email.com", phone:"7943432"}
         ]        
 
-        _output1.innerText = _function_name;
+        //let _map1 = await _customers.map(async (item) => {
+        let _map1 = _customers.map((item) => {
+                return {id:item.id, name:item.name, email:item.email};                
+        });
+    
+        _output1.innerText = JSON.stringify(_map1);
 
     } catch (error) {
         
