@@ -24,7 +24,7 @@
 //
 //es5+ optional: asnc/await - promise - non blocking function
 //es5+ array function  = (e) => {}
-//
+//es5+ async / await - promise 
 document.getElementById("btn-ds1").addEventListener("click", function(e){
 
     //function local scope 
@@ -110,4 +110,80 @@ document.getElementById("btn-ds1").addEventListener("click", function(e){
 
 });
 
+
+document.getElementById("btn-ds2").addEventListener("click", async (e) => {
+
+    const _output1 = document.getElementById("output1");
+    const _function_name = "btn-ds2";
+
+    try {
+        
+        let _array1 = [1,2,5,7,10]
+        const _array2 = ["one", "two", "three"]
+
+        const _object1 = {id:1, name:"item one"};
+
+        const _array3 = [
+            {id:1, name:"item one", items:[1,34,8,10]},
+            {id:2, name:"item two", items:["one", "two", "three"]},
+        ]
+
+        const _customers = [
+            {id:1, name:"name one", email:"name1@email.com", phone:"832873"},
+            {id:2, name:"name two", email:"name2@email.com"},
+            {id:3, name:"name three", email:"name3@email.com", phone:"7943432"}
+        ]        
+
+        //array.reduce - loops through all items and return 1 accumulated resut
+        //ie: sum,avg, etc.. math expression result 
+        //used in React 
+
+        const _ret_total = _array1.reduce((total,item)=>{
+            //any valid math expression
+            //return 1;
+            //eact time through the loop, total is accumulated or updated with the previous value
+            //total = total + item
+            return (total + item);
+        },0); //optional initial accumulator value 
+
+        _output1.innerText = `${JSON.stringify(_array1)} | total: ${_ret_total}`;
+
+    } catch (error) {
+        
+        _output1.innerText = `${_function_name}::err - ${error}`;
+    }
+
+});
+
+document.getElementById("btn-ds3").addEventListener("click", async (e) => {
+
+    const _output1 = document.getElementById("output1");
+    const _function_name = "btn-ds3";
+
+    try {
+        
+        let _array1 = [1,2,5,7,10]
+        const _array2 = ["one", "two", "three"]
+
+        const _object1 = {id:1, name:"item one"};
+
+        const _array3 = [
+            {id:1, name:"item one", items:[1,34,8,10]},
+            {id:2, name:"item two", items:["one", "two", "three"]},
+        ]
+
+        const _customers = [
+            {id:1, name:"name one", email:"name1@email.com", phone:"832873"},
+            {id:2, name:"name two", email:"name2@email.com"},
+            {id:3, name:"name three", email:"name3@email.com", phone:"7943432"}
+        ]        
+
+        _output1.innerText = _function_name;
+
+    } catch (error) {
+        
+        _output1.innerText = `${_function_name}::err - ${error}`;
+    }
+
+});
 
