@@ -25,7 +25,7 @@
 //es5+ optional: asnc/await - promise - non blocking function
 //es5+ array function  = (e) => {}
 //es5+ async / await - promise 
-document.getElementById("btn-ds1").addEventListener("click", function(e){
+document.getElementById("btn-array-map-1").addEventListener("click", function(e){
 
     //function local scope 
 
@@ -33,7 +33,7 @@ document.getElementById("btn-ds1").addEventListener("click", function(e){
     //ie: selinium - 
 
     const _output1 = document.getElementById("output1");
-    const _function_name = "btn-ds1";
+    const _function_name = "btn-array-map-1";
 
     try {
         
@@ -111,10 +111,10 @@ document.getElementById("btn-ds1").addEventListener("click", function(e){
 });
 
 
-document.getElementById("btn-ds2").addEventListener("click", async (e) => {
+document.getElementById("btn-array-reduce-1").addEventListener("click", async (e) => {
 
     const _output1 = document.getElementById("output1");
-    const _function_name = "btn-ds2";
+    const _function_name = "btn-array-reduce-1";
 
     try {
         
@@ -155,10 +155,10 @@ document.getElementById("btn-ds2").addEventListener("click", async (e) => {
 
 });
 
-document.getElementById("btn-ds3").addEventListener("click", async (e) => {
+document.getElementById("btn-array-map-2").addEventListener("click", async (e) => {
 
     const _output1 = document.getElementById("output1");
-    const _function_name = "btn-ds3";
+    const _function_name = "btn-array-map-2";
 
     try {
         
@@ -193,10 +193,10 @@ document.getElementById("btn-ds3").addEventListener("click", async (e) => {
 });
 
 
-document.getElementById("btn-ds4").addEventListener("click", async (e) => {
+document.getElementById("btn-class-set-1").addEventListener("click", async (e) => {
 
     const _output1 = document.getElementById("output1");
-    const _function_name = "btn-ds4";
+    const _function_name = "btn-class-set-1";
 
     try {
         
@@ -226,6 +226,8 @@ document.getElementById("btn-ds4").addEventListener("click", async (e) => {
         //class Set 
         //loop through set and convert to javascript list 
 
+        _output1.innerText = "";
+        
         //_set2.forEach
         //es6+ 
         for(let item of _set2)
@@ -242,10 +244,10 @@ document.getElementById("btn-ds4").addEventListener("click", async (e) => {
 });
 
 
-document.getElementById("btn-ds5").addEventListener("click", async (e) => {
+document.getElementById("btn-class-map-1").addEventListener("click", async (e) => {
 
     const _output1 = document.getElementById("output1");
-    const _function_name = "btn-ds5";
+    const _function_name = "btn-class-map-1";
 
     try {
         
@@ -278,6 +280,8 @@ document.getElementById("btn-ds5").addEventListener("click", async (e) => {
 
         //retrieve items 
         const _key2_value = _map1.get("key2");
+
+        _output1.innerText = "";
 
         //_map1.forEach
         //es6+ 
