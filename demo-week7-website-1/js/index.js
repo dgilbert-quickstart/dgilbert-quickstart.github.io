@@ -192,3 +192,73 @@ document.getElementById("btn-ds3").addEventListener("click", async (e) => {
 
 });
 
+
+document.getElementById("btn-ds4").addEventListener("click", async (e) => {
+
+    const _output1 = document.getElementById("output1");
+    const _function_name = "btn-ds4";
+
+    try {
+        
+        //functionsl programming - using the function only without additional functanality 
+        //arrap.map, reduce, filter, ...
+
+        //set = unique non-repeating list of values 
+
+        //es1-4 set example 
+        //not have must additional functionality, create custom additional functionality
+
+        //es6+ set class example
+        //class has additional functions 
+        //--- additional functanility ie: sort, other 
+        const _set1 = new Set()
+        const _set2 = new Set([1,2,3,3,4])
+
+        _set2.add(4);
+        
+        //additional set methods
+        //_set2.keys()
+
+        //class Set 
+        //loop through set and convert to javascript list 
+
+        //_set2.forEach
+        //es6+ 
+        for(let item of _set2)
+        {
+            _output1.innerText += `${item}|`;
+        }
+        
+
+    } catch (error) {
+        
+        _output1.innerText = `${_function_name}::err - ${error}`;
+    }
+
+});
+
+
+document.getElementById("btn-ds5").addEventListener("click", async (e) => {
+
+    const _output1 = document.getElementById("output1");
+    const _function_name = "btn-ds5";
+
+    try {
+        
+        //functionsl programming - using the function only without additional functanality 
+        //map = array of key / value pair - ie: dictionary, key must be unique
+        
+        //es1-4 map example 
+        //not have must additional functionality, create custom additional functionality
+
+        //es6+ map class example
+        //--- additional functanility ie: sort, other 
+
+        _output1.innerText = _function_name;
+
+    } catch (error) {
+        
+        _output1.innerText = `${_function_name}::err - ${error}`;
+    }
+
+});
