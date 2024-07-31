@@ -219,7 +219,10 @@ document.getElementById("btn-class-set-1").addEventListener("click", async (e) =
         const _set2 = new Set([1,2,3,3,4])
 
         _set2.add(4);
-        
+                
+        //if key exists 
+        const _3_exists = _set2.has(3);
+
         //additional set methods
         //_set2.keys()
 
@@ -277,6 +280,9 @@ document.getElementById("btn-class-map-1").addEventListener("click", async (e) =
 
         _map1.set("key4",25) //add new key and value 
         _map1.set("key3",12) //update value using key 
+
+        //if key exists 
+        const _key2_exists = _map1.has("key2");
 
         //retrieve items 
         const _key2_value = _map1.get("key2");
