@@ -11,7 +11,7 @@
 
 document.getElementById("btn-log-example-1").addEventListener("click", ()=>{
 
-    const _function_name = "btn-log-example-1";
+    const _function_name = "page1::btn-log-example-1";
     const _output1 = document.getElementById("output1");
 
     try {
@@ -30,14 +30,14 @@ document.getElementById("btn-log-example-1").addEventListener("click", ()=>{
 
 document.getElementById("btn-calc-example-1").addEventListener("click", ()=>{
 
-    const _function_name = "btn-calc-example-1";
+    const _function_name = "page1::btn-calc-example-1";
     const _output1 = document.getElementById("output1");
 
     try {
         
         const _ret = calc_add(5,10);
         
-        _output1.innerText = `$calc_add: ${_ret}`;
+        _output1.innerText = `page1::calc_add: ${_ret}`;
 
     } catch (error) {
         
