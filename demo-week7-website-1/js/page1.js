@@ -28,3 +28,22 @@ document.getElementById("btn-log-example-1").addEventListener("click", ()=>{
 });
 
 
+document.getElementById("btn-calc-example-1").addEventListener("click", ()=>{
+
+    const _function_name = "btn-calc-example-1";
+    const _output1 = document.getElementById("output1");
+
+    try {
+        
+        const _ret = calc_add(5,10);
+        
+        _output1.innerText = `$calc_add: ${_ret}`;
+
+    } catch (error) {
+        
+        _output1.innerText = `${_function_name}::error - ${error}`;
+        log(`${_function_name}::error - ${error}`)
+    }
+});
+
+
