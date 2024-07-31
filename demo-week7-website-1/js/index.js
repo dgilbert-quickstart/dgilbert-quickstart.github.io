@@ -305,3 +305,97 @@ document.getElementById("btn-class-map-1").addEventListener("click", async (e) =
     }
 
 });
+
+document.querySelector(".btn-custom-set-1").addEventListener("click", async ()=>{
+
+    const _function_name = "btn-custom-set-1";
+    const _output1 = document.getElementById("output1");
+
+    try {
+
+        //intro syntax code of creating custom set, map using javasctipt 
+        //1. object initializer - Object.create - es1-4 - json document  ie: w3schools
+        //2. function classes - new MyClass1() - es1-4  ie: w3schools
+        //3. class keyword - new MyClass1() - es5+  ie: w3schools
+
+        //1. object initializer - Object.create - es1-4 or json document  
+
+        //when adding item to the set - check if item already exist
+        let MySet1 = {};  //Object.create - es1-4 or json document  
+        let MySet2 = [];
+
+        //check if item already exists
+        //- different code to validate if an object aready exist 
+        //- ie: unique hask code for each item 
+        // -or- array.find
+        
+        //if(!item in MySet1)
+
+        //add item 
+        //MySet1.push(item)
+
+        //-or- 
+        //loop through items and check if item already exist then add item 
+        //ie: forEach, Filter, Find
+
+        //-or-
+        //create custom class
+
+        //other best practice example implementations
+        //and other data structures ie: queue, stack, link-list, map, set, etc..
+        //ie: shopping cart app - list.add, remove, search, filter
+
+        _output1.innerText = _function_name;
+        
+    } catch (error) {
+        _output1.innerText = `${_function_name}::err - ${error}`;
+    }
+});
+ 
+document.querySelector("#btn-custom-map-1").addEventListener("click", async ()=>{
+
+    const _function_name = "btn-custom-map-1";
+    const _output1 = document.getElementById("output1");
+
+    try {
+
+        //intro syntax code of creating custom set, map using javasctipt 
+        //1. object initializer - Object.create - es1-4 - json document  ie: w3schools
+        //2. function classes - new MyClass1() - es1-4  ie: w3schools
+        //3. class keyword - new MyClass1() - es5+  ie: w3schools
+
+        //1. object initializer - Object.create - es1-4 or json document  
+
+        //when adding item to the set - check if item already exist
+        let MyMap1 = [];
+
+        //check if item already exists
+        //- different code to validate if an object aready exist 
+        //- ie: unique hask code for each item 
+        // -or- array.find
+        
+        //item = {key:"key1", value:"value1"}
+
+        //Array.Find()
+
+        //add item 
+        //MyMap1.push(item)
+
+        //-or- 
+        //loop through items and check if item already exist then add item 
+        //ie: forEach, Filter, Find
+
+        //-or-
+        //create custom class
+
+        //other best practice example implementations
+        //and other data structures ie: queue, stack, link-list, map, set, etc..
+        //ie: shopping cart app - list.add, remove, search, filter
+
+        _output1.innerText = _function_name;
+        
+    } catch (error) {
+        _output1.innerText = `${_function_name}::err - ${error}`;
+    }
+});
+
