@@ -6,7 +6,7 @@ document.getElementById("btn-oop-obj-ex1").addEventListener("click", (e)=>{
 
     try {        
 
-        _output1.innerText = _function_name;
+        _output1.innerText = oop_obj_es4_ex1();
 
     } catch (error) {
         
