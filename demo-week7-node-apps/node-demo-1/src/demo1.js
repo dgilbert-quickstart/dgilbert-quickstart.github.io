@@ -14,10 +14,17 @@ refactor:
 - add .gitignore 
 */
 
+//ie: javascript-module / react import syntax 
+//import {uuid4} from "uuid";
+
+//node import syntax 
+const { v4: uuidv4 } = require("uuid");
+
 //es1-6+
 function main()
 {
-    const _msg = `intro to node 20 - 1.0.3`;
+    const _uuid = uuidv4(); //generate a unique id 
+    const _msg = `intro to node 20 - 1.0.4 - ${_uuid} `;
     console.log(_msg);
 }
 
