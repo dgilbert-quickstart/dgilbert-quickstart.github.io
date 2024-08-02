@@ -17,7 +17,7 @@ refactor:
 //es1-6+
 function main()
 {
-    const _msg = `intro to node 20 - 1.0.1`;
+    const _msg = `intro to node 20 - 1.0.2`;
     console.log(_msg);
 }
 
