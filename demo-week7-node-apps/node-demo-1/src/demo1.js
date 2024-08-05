@@ -32,4 +32,5 @@ function main()
 main();
 
 //node demo1.js
+//npm run dev
 
