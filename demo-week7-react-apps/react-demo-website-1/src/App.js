@@ -13,10 +13,22 @@ function App() {
   //functionsl component data/state - ie: closure - saving data inside a parent functional/component/function
   //state is saved each time the function is called
   //closure variables - saves state 
+  //-- example of array destrucroring - creating variable(s) from an array
+  //-- state variable, state variable-updater
   const [count, setCount] = useState(0);
+
+  //diplay state {count}
+  //update state to a new value and not maintaining previous value 
+  //setCount(1)
+  //setCount((prevcount)=>1) -- reccomended 
+
+  //update state - mainiting previous value 
+  //setCount(count + 1)  -- not reccomended: update state, react does not maintain state when screen refresh 
+  //setCount((prevcount) => prevcount+1) -- reccomended: best practice: use callback/closure/arrow function - maintains state when ui is refreshed
   
   //-- useEffect - functional component lifecycle hook 
   //-- add useEffect in any react function/functional component 
+  //## can create multiple useEffects ##
 
   useEffect(()=>{
     //-- 1. can be configured to run 1 time, when parent function starts, exit, ie: []
