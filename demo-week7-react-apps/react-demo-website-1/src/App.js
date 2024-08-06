@@ -3,7 +3,7 @@ import './AppIndex.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <h4>React Demo Website 1.0.1</h4>
       <header>
         <p>
@@ -12,7 +12,7 @@ function App() {
       </header>
       <div className='output1'>
       </div>
-      <div>
+      <div className="action">
           <button>ex1</button>
           <button>ex2</button>
       </div>
