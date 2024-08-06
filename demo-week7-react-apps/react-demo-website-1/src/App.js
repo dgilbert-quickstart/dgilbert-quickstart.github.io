@@ -1,10 +1,11 @@
 import './App.css';
 import './AppIndex.css';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="container">
-      <h4>React Demo Website 1.0.1</h4>
+      <Header title="React Demo Website 1.0.3"/>
       <header>
         <p>
           Introduction to React 18+
