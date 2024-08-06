@@ -6,8 +6,9 @@
 //const Header = function() {
 //export function Header() {    
 //asyn/await 
+//const Header = (props) => {
 //--object destructoring - creating variable(s) from an object 
-const Header = (props) => {
+const Header = ({title="*default-title"}) => {
 
     //-- saving data/state = props within a function/closure 
 
@@ -19,7 +20,7 @@ const Header = (props) => {
     //-- ie-invalid: <div>.html-jax..</div><div>..html-jsx..</div>
     //-- ie-invalid: <h1>.html-jax..</h1>h1>..html-jsx..</h1>
     <h4>
-        {props.title}
+        {title}
     </h4>
     )    
 }
