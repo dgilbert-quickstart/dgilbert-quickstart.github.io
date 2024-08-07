@@ -59,6 +59,11 @@ function App() {
     //setCount((prevcount) => prevcount+1);
 
     //run when component is removed from memory ie: when un-load component from screen
+    return () => {
+      //code or memroy cleanup ie: stop clearTimeOut
+      console.log("## useEffect unload #1.")
+    }
+
   },[]); 
     
   useEffect(()=>{
@@ -71,7 +76,10 @@ function App() {
     //setCount((prevcount) => prevcount+1);
 
     //run when component is removed from memory ie: when un-load component from screen
-    
+    return () => {
+      //code or memroy cleanup ie: stop clearTimeOut
+      console.log("## useEffect unload #2.")
+    }
   },[count]); //or multiple variables [count,other]
   
   useEffect(()=>{
@@ -86,6 +94,11 @@ function App() {
     
     //run when component is removed from memory ie: when un-load component from screen
 
+    return () => {
+      //code or memroy cleanup ie: stop clearTimeOut
+      console.log("## useEffect unload #3.")
+    }
+
   }); //default -- runs recursivly/infinetly
 
   function subtractCnt()
@@ -95,7 +108,7 @@ function App() {
   
   return (
     <div className="container">
-      <Header title="React Demo Website 1.0.6"/>
+      <Header title="React Demo Website 1.0.7"/>
       <header>
         <p>
           Introduction to React 18+
