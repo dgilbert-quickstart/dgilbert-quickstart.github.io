@@ -19,6 +19,10 @@ const Header = ({title="*default-title"}) => {
     //-- ie-valid: <>.html-jax..</>
     //-- ie-invalid: <div>.html-jax..</div><div>..html-jsx..</div>
     //-- ie-invalid: <h1>.html-jax..</h1>h1>..html-jsx..</h1>
+    //--- props access --
+    //{props.title}
+    //-- props object destructoring 
+    //({title})
     <h4>
         {title}
     </h4>
