@@ -43,8 +43,8 @@ function App() {
   //## can create multiple useEffects ##
 
   //-- 1. can be configured to run 1 time, when parent function starts, exit, ie: []
-    //-- 2. runs when a specified state/data is updated, [count]
-    //-- 3. can be configured to run continiously/recursivly whenever any state is updated.  ie: continous screen refresh  
+  //-- 2. runs when a specified state/data is updated, [count]
+  //-- 3. can be configured to run continiously/recursivly whenever any state is updated.  ie: continous screen refresh  
 
   useEffect(()=>{
     //-- 1. can be configured to run 1 time, when parent function starts, exit, ie: []    
@@ -56,7 +56,7 @@ function App() {
       you can move this variable directly inside useEffect  react-hooks/exhaustive-deps
     */
     a += 1;
-    setCount((prevcount) => prevcount+1);
+    //setCount((prevcount) => prevcount+1);
 
     //run when component is removed from memory ie: when un-load component from screen
   },[]); 
@@ -88,9 +88,14 @@ function App() {
 
   }); //default -- runs recursivly/infinetly
 
+  function subtractCnt()
+  {
+    setCount((prevcount) => prevcount-1);
+  }
+  
   return (
     <div className="container">
-      <Header title="React Demo Website 1.0.5"/>
+      <Header title="React Demo Website 1.0.6"/>
       <header>
         <p>
           Introduction to React 18+
@@ -98,6 +103,9 @@ function App() {
       </header>
       <div>
         <span>display info: {count} - a: {a} </span>
+        <button onClick={()=>setCount((prevcnt)=>prevcnt+1)}>+</button>
+        {" "}
+        <button onClick={subtractCnt}>-</button>
       </div>
       <div className='output1'>
       </div>      
