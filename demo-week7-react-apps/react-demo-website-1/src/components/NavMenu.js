@@ -7,9 +7,9 @@ const NavMenu = (props) => {
 return (
     <>
         <nav>
-             <a href="#">Home</a>
+             <Link to="/">Home</Link>
              {" "}
-             <a href="#">About</a>
+             <Link to="/about">About</Link>
         </nav>    
     </>
 )}

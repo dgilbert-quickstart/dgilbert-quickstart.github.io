@@ -4,7 +4,9 @@ import './App.css';
 import './AppIndex.css';
 import NavMenu from './components/NavMenu';
 import Header from './components/Header';
+import About from './components/About';
 import {useEffect, useState, useRef} from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //-- outside (App.js) appliction global/context - state/date 
 //-- functional programming/closures can access inner and outer state/data 
@@ -141,30 +143,44 @@ function App() {
   }
 
   return (
-    <>
+    <Router>
+      <>
       <NavMenu/>
       <div className="container">
-        <Header title="React Demo Website 1.1.1"/>
+        <Header title="React Demo Website 1.1.2"/>
         <header>
           <p>
             Introduction to React 18+
           </p> 
         </header>
-        <div>
-          <span>display info: {count} - a: {a} </span>
-          <button onClick={()=>setCount((prevcnt)=>prevcnt+1)}>+</button>
-          {" "}
-          <button onClick={subtractCnt}>-</button>
+        <Routes>
+          <Route path='/' element={
+            <>
+                <div>
+                  <span>display info: {count} - a: {a} </span>
+                  <button onClick={()=>setCount((prevcnt)=>prevcnt+1)}>+</button>
+                  {" "}
+                  <button onClick={subtractCnt}>-</button>
+                </div>
+                <div className='output1' ref={refoutput1}>
+                </div>      
+                <div className="action">
+                    <button onClick={useRefExample}>useRef example</button>
+                    {" "}
+                    <button>ex2</button>
+                </div>
+            </>
+          }/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="*" element={
+              <>
+                <h4>No page found</h4>
+              </>
+              }/>
+        </Routes>
         </div>
-        <div className='output1' ref={refoutput1}>
-        </div>      
-        <div className="action">
-            <button onClick={useRefExample}>useRef example</button>
-            {" "}
-            <button>ex2</button>
-        </div>
-      </div>
     </>
+    </Router>
   );
 }
 
