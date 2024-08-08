@@ -1,5 +1,8 @@
+//-- App.js --- 
+
 import './App.css';
 import './AppIndex.css';
+import NavMenu from './components/NavMenu';
 import Header from './components/Header';
 import {useEffect, useState, useRef} from "react";
 
@@ -139,7 +142,8 @@ function App() {
 
   return (
     <div className="container">
-      <Header title="React Demo Website 1.0.9"/>
+      <NavMenu/>
+      <Header title="React Demo Website 1.1.0"/>
       <header>
         <p>
           Introduction to React 18+
