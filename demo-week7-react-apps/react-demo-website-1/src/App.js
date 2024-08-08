@@ -141,28 +141,30 @@ function App() {
   }
 
   return (
-    <div className="container">
+    <>
       <NavMenu/>
-      <Header title="React Demo Website 1.1.0"/>
-      <header>
-        <p>
-          Introduction to React 18+
-        </p> 
-      </header>
-      <div>
-        <span>display info: {count} - a: {a} </span>
-        <button onClick={()=>setCount((prevcnt)=>prevcnt+1)}>+</button>
-        {" "}
-        <button onClick={subtractCnt}>-</button>
-      </div>
-      <div className='output1' ref={refoutput1}>
-      </div>      
-      <div className="action">
-          <button onClick={useRefExample}>useRef example</button>
+      <div className="container">
+        <Header title="React Demo Website 1.1.1"/>
+        <header>
+          <p>
+            Introduction to React 18+
+          </p> 
+        </header>
+        <div>
+          <span>display info: {count} - a: {a} </span>
+          <button onClick={()=>setCount((prevcnt)=>prevcnt+1)}>+</button>
           {" "}
-          <button>ex2</button>
+          <button onClick={subtractCnt}>-</button>
+        </div>
+        <div className='output1' ref={refoutput1}>
+        </div>      
+        <div className="action">
+            <button onClick={useRefExample}>useRef example</button>
+            {" "}
+            <button>ex2</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
