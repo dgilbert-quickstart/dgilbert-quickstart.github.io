@@ -23,6 +23,9 @@ function App() {
   //-- state variable, state variable-updater
   const [count, setCount] = useState(0);
 
+  let refcout = useRef(0); //tracked react variable ie: useState
+  let refoutput1 = useRef(""); //tracked react element ie: getElementById 
+
   //diplay state {count}
   //update state to a new value and not maintaining previous value 
   //setCount(1)
@@ -58,6 +61,13 @@ function App() {
     a += 1;
     //setCount((prevcount) => prevcount+1);
 
+    //-- ----------------------------------------------------------
+    //-- infinate loop - react re-renders / refresh screen when a useSate variable is updated / continuiously/recursivly
+    //-- useEffect to update state/data - 1+ times 
+    //-- ----------------------------------------------------------
+    // updating tracked useState variable can cause an recursive/infinate loop 
+    //setCount((prevcount) => prevcount+1);
+
     //run when component is removed from memory ie: when un-load component from screen
     return () => {
       //code or memroy cleanup ie: stop clearTimeOut
@@ -80,6 +90,7 @@ function App() {
       //code or memroy cleanup ie: stop clearTimeOut
       console.log("## useEffect unload #2.")
     }
+
   },[count]); //or multiple variables [count,other]
   
   useEffect(()=>{
@@ -99,16 +110,36 @@ function App() {
       console.log("## useEffect unload #3.")
     }
 
+    //----
+    //-- best practice to avoid updating useState variable in a recursive useEffect function
+    //   this will cause an infinate loop 
+    //----
+
   }); //default -- runs recursivly/infinetly
 
-  function subtractCnt()
+  function subtractCnt(event)
   {
     setCount((prevcount) => prevcount-1);
   }
   
+  const useRefExample = (event) => {
+
+    const _function_name = "App::useRefExample";
+    event.preventDefault();
+
+    try {
+      
+      refcout.current = refcout.current + 1;
+      refoutput1.current.innerText = `${_function_name} - ${refcout.current}`;
+
+    } catch (error) {
+      refoutput1.current.innerText = `${_function_name}::Error - ${error}`;
+    }
+  }
+
   return (
     <div className="container">
-      <Header title="React Demo Website 1.0.7"/>
+      <Header title="React Demo Website 1.0.9"/>
       <header>
         <p>
           Introduction to React 18+
@@ -120,10 +151,11 @@ function App() {
         {" "}
         <button onClick={subtractCnt}>-</button>
       </div>
-      <div className='output1'>
+      <div className='output1' ref={refoutput1}>
       </div>      
       <div className="action">
-          <button>ex1</button>
+          <button onClick={useRefExample}>useRef example</button>
+          {" "}
           <button>ex2</button>
       </div>
     </div>
